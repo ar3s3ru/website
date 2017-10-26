@@ -3,17 +3,29 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://ar3s3ru.github.io/categories/</loc>
+    <loc>https://ar3s3ru.github.io/website/post/2017-10-26-hello-world/</loc>
+    <lastmod>2017-10-26T09:54:16+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ar3s3ru.github.io/website/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://ar3s3ru.github.io/</loc>
+    <loc>https://ar3s3ru.github.io/website/</loc>
+    <lastmod>2017-10-26T09:54:16+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://ar3s3ru.github.io/tags/</loc>
+    <loc>https://ar3s3ru.github.io/website/post/</loc>
+    <lastmod>2017-10-26T09:54:16+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ar3s3ru.github.io/website/tags/</loc>
     <priority>0</priority>
   </url>
   
