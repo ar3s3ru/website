@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>My New Hugo Site</title>
-    <link>http://example.org/</link>
-    <description>Recent content on My New Hugo Site</description>
+    <title>Danilo Cianfrone</title>
+    <link>https://ar3s3ru.github.io/danilocianfrone.com/</link>
+    <description>Recent content on Danilo Cianfrone</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 26 Oct 2017 09:54:16 +0200</lastBuildDate>
     
-	<atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ar3s3ru.github.io/danilocianfrone.com/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Hello World!</title>
-      <link>http://example.org/post/2017-10-26-hello-world/</link>
+      <link>https://ar3s3ru.github.io/danilocianfrone.com/post/2017-10-26-hello-world/</link>
       <pubDate>Thu, 26 Oct 2017 09:54:16 +0200</pubDate>
       
-      <guid>http://example.org/post/2017-10-26-hello-world/</guid>
+      <guid>https://ar3s3ru.github.io/danilocianfrone.com/post/2017-10-26-hello-world/</guid>
       <description>Hello world!</description>
     </item>
     
