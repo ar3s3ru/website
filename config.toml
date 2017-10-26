@@ -1,4 +1,4 @@
-baseURL = "https://ar3s3ru.github.io"
+baseURL = "https://ar3s3ru.github.io/website/"
 languageCode = "en-us"
 title = "Danilo Cianfrone"
 theme = "hugo-theme-cactus-plus"
