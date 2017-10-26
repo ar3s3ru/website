@@ -3,29 +3,29 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://ar3s3ru.github.io/website/post/2017-10-26-hello-world/</loc>
+    <loc>http://danilocianfrone.com/post/2017-10-26-hello-world/</loc>
     <lastmod>2017-10-26T09:54:16+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ar3s3ru.github.io/website/categories/</loc>
+    <loc>http://danilocianfrone.com/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://ar3s3ru.github.io/website/</loc>
-    <lastmod>2017-10-26T09:54:16+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ar3s3ru.github.io/website/post/</loc>
+    <loc>http://danilocianfrone.com/</loc>
     <lastmod>2017-10-26T09:54:16+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://ar3s3ru.github.io/website/tags/</loc>
+    <loc>http://danilocianfrone.com/post/</loc>
+    <lastmod>2017-10-26T09:54:16+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://danilocianfrone.com/tags/</loc>
     <priority>0</priority>
   </url>
   
