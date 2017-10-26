@@ -2,23 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Danilo Cianfrone</title>
-    <link>https://ar3s3ru.github.io/danilocianfrone.com/</link>
+    <link>https://ar3s3ru.github.io/</link>
     <description>Recent content on Danilo Cianfrone</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 26 Oct 2017 09:54:16 +0200</lastBuildDate>
     
-	<atom:link href="https://ar3s3ru.github.io/danilocianfrone.com/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ar3s3ru.github.io/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Hello World!</title>
-      <link>https://ar3s3ru.github.io/danilocianfrone.com/post/2017-10-26-hello-world/</link>
-      <pubDate>Thu, 26 Oct 2017 09:54:16 +0200</pubDate>
-      
-      <guid>https://ar3s3ru.github.io/danilocianfrone.com/post/2017-10-26-hello-world/</guid>
-      <description>Hello world!</description>
-    </item>
     
   </channel>
 </rss>
