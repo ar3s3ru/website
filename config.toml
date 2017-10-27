@@ -1,4 +1,4 @@
-baseURL = "http://danilocianfrone.com/"
+baseURL = "https://danilocianfrone.com/"
 languageCode = "en-us"
 title = "Danilo Cianfrone"
 theme = "hugo-theme-cactus-plus"
