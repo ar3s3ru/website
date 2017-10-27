@@ -1,31 +1,30 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://danilocianfrone.com/post/2017-10-26-hello-world/</loc>
+    <loc>https://danilocianfrone.com/post/2017-10-26-hello-world/</loc>
     <lastmod>2017-10-26T09:54:16+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://danilocianfrone.com/categories/</loc>
+    <loc>https://danilocianfrone.com/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://danilocianfrone.com/</loc>
-    <lastmod>2017-10-26T09:54:16+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://danilocianfrone.com/post/</loc>
+    <loc>https://danilocianfrone.com/</loc>
     <lastmod>2017-10-26T09:54:16+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://danilocianfrone.com/tags/</loc>
+    <loc>https://danilocianfrone.com/post/</loc>
+    <lastmod>2017-10-26T09:54:16+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://danilocianfrone.com/tags/</loc>
     <priority>0</priority>
   </url>
   
