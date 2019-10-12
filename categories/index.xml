@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on Danilo Cianfrone</title>
-    <link>https://danilocianfrone.com/categories/index.xml</link>
-    <description>Recent content in Categories on Danilo Cianfrone</description>
+    <title>Categories on ar3s3ru :: Dani</title>
+    <link>https://danilocianfrone.com/categories/</link>
+    <description>Recent content in Categories on ar3s3ru :: Dani</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="https://danilocianfrone.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://danilocianfrone.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    
     
   </channel>
 </rss>
