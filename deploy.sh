@@ -16,18 +16,3 @@ if [ -n "$*" ]; then
 	msg="$*"
 fi
 git commit -m "$msg"
-
-# Push changes to Github pages branch
-git push origin gh-pages
-
-# Commit the updated version of the master branch
-cd ..
-git add .
-
-msg="Update public branch $(date)"
-if [ -n "$*" ]; then
-	msg="$*"
-fi
-git commit -am "$msg"
-
-git push origin master

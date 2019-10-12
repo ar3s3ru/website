@@ -5,15 +5,10 @@ paginate = 5
 
 [params]
   contentTypeName = "post"
-  # ["orange", "blue", "red", "green", "pink"]
   themeColor = "red"
-  # if you set this to 0, only submenu trigger will be visible
-  showMenuItems = 2
-  # show selector to switch language
+  showMenuItems = 3
   showLanguageSelector = false
-  # set theme to full screen width
   fullWidthTheme = false
-  # center theme with default width
   centerTheme = false
   # set a custom favicon (default is a `themeColor` square)
   # favicon = "favicon.ico"
@@ -43,3 +38,8 @@ paginate = 5
         identifier = "github"
         name = "Github"
         url = "https://github.com/ar3s3ru"
+
+      [[languages.en.menu.main]]
+        identifier = "linkedin"
+        name = "LinkedIn"
+        url = "https://www.linkedin.com/in/danilo-cianfrone/"
