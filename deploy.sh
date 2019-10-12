@@ -2,10 +2,12 @@
 
 set -e
 
-printf "\033[0;32mDeploying updates to GitHub...\033[0m\n"
+printf "\033[0;32m>>> Rebuilding website...\033[0m\n"
 
 # Build the project.
 hugo
+
+printf "\033[0;32m>>> Deploying updates to GitHub...\033[0m\n"
 
 # Add changes to git
 cd public
@@ -16,3 +18,5 @@ if [ -n "$*" ]; then
 	msg="$*"
 fi
 git commit -m "$msg"
+
+git push origin gh-pages
