@@ -1,0 +1,3 @@
+# Ignore Hugo generated files
+# -- must use deploy.sh to deploy changes
+public/
