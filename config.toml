@@ -21,8 +21,8 @@ paginate = 5
 [languages]
   [languages.en]
     languageName = "English"
-    title = "ar3s3ru :: Dani"
-    subtitle = "A simple, retro theme for Hugo"
+    title = "ar3s3ru (Danilo Cianfrone)"
+    subtitle = "A collection of rants and silly thoughts"
     keywords = ""
     copyright = ""
     menuMore = "Show more"
