@@ -2,7 +2,7 @@
 title = "Designing Aggregates in Rust"
 description = "An initial attempt in abstracting the Domain-driven Design Aggregate concept in Rust"
 date = 2019-10-12T15:06:16+02:00
-draft = false
+draft = true
 +++
 
 ```rust
