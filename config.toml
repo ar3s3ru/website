@@ -9,7 +9,7 @@ paginate = 5
   showMenuItems = 3
   showLanguageSelector = false
   fullWidthTheme = false
-  centerTheme = false
+  centerTheme = true
   # set a custom favicon (default is a `themeColor` square)
   # favicon = "favicon.ico"
 
