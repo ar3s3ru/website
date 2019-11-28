@@ -11,6 +11,16 @@ tags = [
 ]
 +++
 
+This post is the first of many to come (hopefully) describing some of the features
+and designs included in the crate I'm currently working on: [`eventually-rs`][eventually-rs].
+
+Given the project is at its very first stage of development, your feedback is invaluable.
+Share your opinion here in the comments section, or get in touch through my Github, LinkedIn or
+plain old [email](mailto:danilocianfr+blog@gmail.com) :-)
+
+---
+---
+
 I've been so fascinated by Rust lately: guaranteed safety[^1], strong and expressive
 type-system with no bargains in performance...
 
@@ -282,6 +292,116 @@ current `State`, modify it and return the modified state.
 
 But what about **error handling**?
 
+Though I'd assume events in most cases are just simply applied to the current state,
+one might potentially run some validations on them, maybe through _Domain Services_.
+
+In this case, we could change the `Aggregate` as such:
+
+```rust
+pub trait Aggregate {
+    type State;
+    type Event;
+    type Error;
+
+    fn apply(state: Self::State, event: Self::Event) -> Result<Self::State, Self::Error>;
+}
+```
+
+### Event Store support
+
+Our `Aggregate` can now change its state representation based on an incoming `Event`, great!
+
+As we said before however, the `Aggregate` should be able to recreate its current state, provided
+all the events -- in chronological order -- that have changed the aggregate state in time.
+
+For the functional programmers out there, this is called **`fold`**:
+
+> In functional programming, **fold** (also termed **reduce**, **accumulate**, **aggregate**, **compress**, or **inject**) refers to a family of higher-order functions that analyze a recursive data structure and through use of a given combining operation, recombine the results of recursively processing its constituent parts, building up a return value.
+>
+> -- <cite> [Fold (higher-order function)][fold-wiki] -- Wikipedia </cite>
+
+`fold` is typically applied on data structures that are traversable, or _iterable_.
+
+Luckily for us, Rust already provides support for such structures through the [`Iterator` trait][rust-iterator].
+In this trait, you can also find a very nice method called -- guess what -- [**`Iterator::fold`**][rust-iterator-fold]!
+
+```rust
+// From the Iterator trait
+fn fold<B, F>(self, init: B, f: F) -> B where
+    F: FnMut(B, Self::Item) -> B,
+```
+
+We can add a similar method in our `Aggregate` trait to apply a list of `Event`s given an initial `State` value:
+
+```rust
+pub trait Aggregate {
+    // ...
+
+    fn fold<I>(state: Self::State, events: I) -> Result<Self::State, Self::Error>
+        where I: Iterator<Item = Self::Events>
+    {
+        // ...
+    }
+}
+```
+
+Since `fold` it's basically just repeating the `apply` for each `Event` in the `Iterator`, we can also provide
+a default implementation for it:
+
+```rust
+fn fold<I>(state: Self::State, events: I) -> Result<Self::State, Self::Error>
+    where I: Iterator<Item = Self::Events>
+{
+    events.fold(
+        // The state in input is ok, since it's been created by either another `fold` or `apply`
+        Ok(state),
+        // Here `previous` is, as you might imagine, the Result from the previous recursive call,
+        // whereas `event` is the current element consumed from the `Iterator`
+        |current, event| {
+            // Result is basically a Monad of which we can change the internal state
+            // in case the Result is thus far `Ok`
+            previous.and_then(|state| Self::apply(state, event))
+        }
+    )
+}
+```
+
+### What's left?
+
+We have a pretty solid ground so far: we can `apply` and `fold` events into an `Aggregate::State`, yay!
+
+However, there are still some more work that we can do, starting from the `State` itself:
+
+1. For most cases, we could implement the `Aggregate` trait on top of the `State`, having something akin to:
+    ```rust
+    pub struct MyAggregateState {
+        // some state
+    }
+
+    impl Aggregate for MyAggregateState {
+        type State = Self;
+
+        // ...
+    }
+    ```
+
+1. In cases where the default state for an `Aggregate` is _nullable_, the `State` would be an `Option<T>`:
+    ```rust
+    pub struct MyAggregateState {
+        // some state
+    }
+
+    pub struct MyAggregate{}
+    impl Aggregate for MyAggregate {
+        type State = Option<MyAggregateState>;
+
+        // ...
+    }
+    ```
+
+In both cases, we could implement a different trait that would _auto-implement_ `Aggregate` appropriately,
+so as to remove unnecessary code from the implementor side.
+
 <!-- Footnotes -->
 
 [^1]: Aside from the memory safety offered by the [Ownership and Borrowing system][ownership-borrowing-rust], Rust provides compile-time guarantees on *thread-safety* with [`Send`][rust-send] and [`Sync`][rust-sync] traits.
@@ -289,6 +409,8 @@ But what about **error handling**?
 [^2]: A _crate_ is the Rust term for _package_.
 
 <!-- Links -->
+
+[eventually-rs]: https://github.com/ar3s3ru/eventually-rs
 
 [hellofresh-careers]: https://www.hellofresh.com/careers/
 [ddd-event-sourcing]: https://martinfowler.com/eaaDev/EventSourcing.html
@@ -300,6 +422,9 @@ But what about **error handling**?
 [building-an-event-sourcing-crate-for-rust]: https://medium.com/capital-one-tech/building-an-event-sourcing-crate-for-rust-2c4294eea165
 [eventsourcing]: https://github.com/pholactery/eventsourcing
 [chronicle]: https://github.com/brendanzab/chronicle
+[fold-wiki]: https://en.wikipedia.org/wiki/Fold_(higher-order_function)
+[rust-iterator]: https://doc.rust-lang.org/std/iter/trait.Iterator.html
+[rust-iterator-fold]: https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.fold
 
 [ownership-borrowing-rust]: https://doc.rust-lang.org/book/second-edition/ch04-00-understanding-ownership.html
 [rust-send]: https://doc.rust-lang.org/std/marker/trait.Send.html
