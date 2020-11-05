@@ -3,12 +3,29 @@ title = "About me"
 date = 2019-10-10T10:00:00+02:00
 +++
 
-_Piacere_, my name is **Danilo Cianfrone**.
+_Ciao_, my name is **Danilo Cianfrone**.
 
-I'm a **Software Engineer** from Italy, currently living in _Berlin, Germany_
+I'm a **Software Engineer** from Italy, currently living in _Berlin_
 and working for [HelloFresh SE](https://www.hellofresh.com).
 
-## GPG Public Key
+I mostly work with PHP nowadays, but me and Go "go" way back (lol).
+
+My current interests are:
+
+* Domain modeling and Domain-driven Design
+* Event Sourcing
+* Rust
+* Kotlin
+* Functional programming
+
+Wanna talk about some of them?
+Looking for speakers at a conference?
+Mentoring?
+Recipe for the perfect Bolognese Ragù?
+
+You can hit me up on [Github](https://github.com/ar3s3ru) or by [mail](mailto:danilocianfr+blog@gmail.com)!
+
+### GPG Public Key
 
 ```
 -----BEGIN PGP PUBLIC KEY BLOCK-----
