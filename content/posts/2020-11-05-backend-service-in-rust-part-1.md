@@ -62,15 +62,12 @@ the repository that is going to host our code!
 
 ## Repository Setup
 
-This is the least favorite part of many people. However, I find it of
-great importance to get it right, just as much as the actual code
-we're going to write.
+This might probably be the least favorite part of the development cycle for many people.
+However, I find it of great importance to get it right, just as much as the actual code
+we're going to write: it will help us write code that actually matters, faster.
 
 In this section, we're going to discuss: package structure, Continuous Integration
-pipeline, configurations, etc.
-
-It's important to setup all the small things as soon as possible, in order
-to keep productivity high during the implementation phase.
+pipeline, etc.
 
 ### Create a new crate
 
@@ -85,10 +82,10 @@ source code file will be in `src/lib.rs`.
 
 I personally prefer having the main crate as a library, and add as many
 binaries as artifacts needed under `src/bin`. In our case, let's create
-an initial `main.rs` file in `src/bin` with a simple `"Hello World"`:
+an initial `dumbbit.rs` file in `src/bin` with a simple `"Hello World"`:
 
 ```rust
-//! src/bin/main.rs
+//! src/bin/dumbbit.rs
 
 fn main() {
     println!("Hello World!")
@@ -117,9 +114,9 @@ service application onto separate crates. This has the following advantages:
 2. **Concurrent** crate compilation from Cargo during `cargo run` or `cargo build`
 3. Flat and tidy package structure
 
-However, this makes things a bit more complicated with Docker images, and for most cases
-there are no concrete benefits of using such structure (unless, of course, your
-application has a high number of potential crates).
+However, this makes things a bit **more complicated** with Docker images, and for most
+cases there are no concrete benefits of using such structure (unless, of course, your
+application has a high number of modules and dependencies).
 
 _Suggestion:_ start with a single crate, split layers using modules and **if**
 the number of modules reaches a "big enough" number, you can:
@@ -131,8 +128,8 @@ the number of modules reaches a "big enough" number, you can:
 
 ### Set up a Continuous Integration pipeline
 
-Continuing on setting up the development environment, next thing I'd suggest you
-to do is to set up a _Continuous Integration pipeline_.
+Continuing on setting up the development environment, next thing we gotta do
+is to set up a _Continuous Integration pipeline_.
 
 At the very least, the CI should perform the following checks:
 
@@ -154,7 +151,8 @@ for Rust, such as:
 * [actions-rs/clippy-check](https://github.com/actions-rs/clippy-check), to run the Clippy linter
 
 In our particular case, we can use the following Workflow configuration
-to enable testing with coverage, compilation and linting:
+to enable testing with coverage, compilation and linting,
+by adding this file to `.github/workflows`:
 
 ```yaml
 name: Rust (stable)
@@ -215,7 +213,7 @@ jobs:
           name: code-coverage-report
           path: cobertura.xml
 
-  # Run clippy to highlight warnings and style errors.
+  # Run cargofmt and clippy to highlight warnings and style errors.
   lints:
       name: Lints
       runs-on: ubuntu-latest
@@ -242,16 +240,18 @@ jobs:
           with:
             token: ${{ secrets.GITHUB_TOKEN }}
             args: --all-features
-
 ```
+
+This pipeline will work whether we push directly to `master`, or we open
+a Pull Request.
 
 ### Our first _Dumb_ HTTP Server
 
 The application transport choice for now is HTTP.
 
-Let's then create a simple _"Hello World"_ application for now.
+Then, let's create a simple _"Hello World"_ application for now!
 
-Remember: we want this application to run on `stable` so no [Rocket][rocket].
+Remember: we want this application to run on `stable` so... no [Rocket][rocket].
 However, a nice `stable`-compatible HTTP library we can use is [`tide`][tide].
 
 Let's add the dependency in `Cargo.toml` like so:
@@ -261,20 +261,21 @@ tide = "0.14.0"
 ```
 
 To use [`tide`][tide] however, we need the [`async-std`][async-std] executor to
-make the `main()` entrypoint `async`. Let's add it like so:
+be able to run Futures in the `main()` entrypoint. Let's add it to the project:
 ```toml
 [dependencies]
 async-std = { version = "1.7.0", features = ["attributes"] }
 ```
 
-Last but not least, I'm a huge fan of [`anyhow`][anyhow] for generic errors,
-rather than using `Box<dyn std::error::Error>`. Let's add that one in `Cargo.toml` too:
+Last but not least, I'm a _huge_ fan of [`anyhow`][anyhow] for generic errors,
+since I don't particularly like the `Box<dyn std::error::Error>` notation.
+Let's add that one in `Cargo.toml` too:
 ```toml
 [dependencies]
 anyhow = "1.0"
 ```
 
-Now, let's create the new HTTP server executable in `src/bin/dumbbit.rs`.
+With the new dependencies, we can put the new HTTP server code in `src/bin/dumbbit.rs`.
 The file should look like this:
 ```rust
 #[async_std::main]
@@ -355,5 +356,6 @@ Twitter or LinkedIn, all the places!
 [rocket]: https://github.com/SergioBenitez/Rocket
 [tide]: https://github.com/http-rs/tide
 [async-std]: https://github.com/async-rs/async-std
+[anyhow]: https://github.com/dtolnay/anyhow
 [executor]: https://rust-lang.github.io/async-book/02_execution/05_io.html
 [mailto]: mailto:danilocianfr+blog@gmail.com
