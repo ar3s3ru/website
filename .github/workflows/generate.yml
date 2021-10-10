@@ -27,4 +27,4 @@ jobs:
           personal_token: ${{ secrets.TOKEN }}
           publish_dir: ./public
           publish_branch: gh-pages
-          cname: danilocianfrone.com
+          cname: ar3s3ru.dev
