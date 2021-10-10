@@ -10,15 +10,15 @@
 <meta property="og:title" content="Implementing a Backend Service in Rust — Part 1">
 <meta property="og:description" content="Project description, Package Structure and Repository setup">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://danilocianfrone.com/posts/2020-11-05-backend-service-in-rust-part-1/"><meta property="article:section" content="posts">
+<meta property="og:url" content="https://ar3s3ru.dev/posts/2020-11-05-backend-service-in-rust-part-1/"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2020-11-05T00:00:00+02:00">
 <meta property="article:modified_time" content="2020-11-05T00:00:00+02:00">
 <meta name=twitter:card content="summary">
 <meta name=twitter:title content="Implementing a Backend Service in Rust — Part 1">
 <meta name=twitter:description content="Project description, Package Structure and Repository setup">
-<link rel=stylesheet href=https://danilocianfrone.com/css/style-classic.css><!--[if lt IE 9]><script src=https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js></script>
+<link rel=stylesheet href=https://ar3s3ru.dev/css/style-classic.css><!--[if lt IE 9]><script src=https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js></script>
 <script src=https://oss.maxcdn.com/respond/1.4.2/respond.min.js></script><![endif]-->
-<link rel=icon type=image/png href=https://danilocianfrone.com/images/favicon.ico>
+<link rel=icon type=image/png href=https://ar3s3ru.dev/images/favicon.ico>
 </head>
 <body class="max-width mx-auto px3 ltr">
 <div class="content index py4">
@@ -39,7 +39,7 @@
 <span id=actions>
 <ul>
 <li>
-<a class=icon href=https://danilocianfrone.com/about/>
+<a class=icon href=https://ar3s3ru.dev/about/>
 <i class="fas fa-chevron-left" aria-hidden=true onmouseover="$('#i-prev').toggle()" onmouseout="$('#i-prev').toggle()"></i>
 </a>
 </li>
@@ -63,57 +63,57 @@
 <div id=share style=display:none>
 <ul>
 <li>
-<a class=icon href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fdanilocianfrone.com%2fposts%2f2020-11-05-backend-service-in-rust-part-1%2f">
+<a class=icon href="http://www.facebook.com/sharer.php?u=https%3a%2f%2far3s3ru.dev%2fposts%2f2020-11-05-backend-service-in-rust-part-1%2f">
 <i class="fab fa-facebook" aria-hidden=true></i>
 </a>
 </li>
 <li>
-<a class=icon href="https://twitter.com/share?url=https%3a%2f%2fdanilocianfrone.com%2fposts%2f2020-11-05-backend-service-in-rust-part-1%2f&text=Implementing%20a%20Backend%20Service%20in%20Rust%20%e2%80%94%20Part%201">
+<a class=icon href="https://twitter.com/share?url=https%3a%2f%2far3s3ru.dev%2fposts%2f2020-11-05-backend-service-in-rust-part-1%2f&text=Implementing%20a%20Backend%20Service%20in%20Rust%20%e2%80%94%20Part%201">
 <i class="fab fa-twitter" aria-hidden=true></i>
 </a>
 </li>
 <li>
-<a class=icon href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fdanilocianfrone.com%2fposts%2f2020-11-05-backend-service-in-rust-part-1%2f&title=Implementing%20a%20Backend%20Service%20in%20Rust%20%e2%80%94%20Part%201">
+<a class=icon href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2far3s3ru.dev%2fposts%2f2020-11-05-backend-service-in-rust-part-1%2f&title=Implementing%20a%20Backend%20Service%20in%20Rust%20%e2%80%94%20Part%201">
 <i class="fab fa-linkedin" aria-hidden=true></i>
 </a>
 </li>
 <li>
-<a class=icon href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fdanilocianfrone.com%2fposts%2f2020-11-05-backend-service-in-rust-part-1%2f&is_video=false&description=Implementing%20a%20Backend%20Service%20in%20Rust%20%e2%80%94%20Part%201">
+<a class=icon href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2far3s3ru.dev%2fposts%2f2020-11-05-backend-service-in-rust-part-1%2f&is_video=false&description=Implementing%20a%20Backend%20Service%20in%20Rust%20%e2%80%94%20Part%201">
 <i class="fab fa-pinterest" aria-hidden=true></i>
 </a>
 </li>
 <li>
-<a class=icon href="mailto:?subject=Implementing%20a%20Backend%20Service%20in%20Rust%20%e2%80%94%20Part%201&body=Check out this article: https%3a%2f%2fdanilocianfrone.com%2fposts%2f2020-11-05-backend-service-in-rust-part-1%2f">
+<a class=icon href="mailto:?subject=Implementing%20a%20Backend%20Service%20in%20Rust%20%e2%80%94%20Part%201&body=Check out this article: https%3a%2f%2far3s3ru.dev%2fposts%2f2020-11-05-backend-service-in-rust-part-1%2f">
 <i class="fas fa-envelope" aria-hidden=true></i>
 </a>
 </li>
 <li>
-<a class=icon href="https://getpocket.com/save?url=https%3a%2f%2fdanilocianfrone.com%2fposts%2f2020-11-05-backend-service-in-rust-part-1%2f&title=Implementing%20a%20Backend%20Service%20in%20Rust%20%e2%80%94%20Part%201">
+<a class=icon href="https://getpocket.com/save?url=https%3a%2f%2far3s3ru.dev%2fposts%2f2020-11-05-backend-service-in-rust-part-1%2f&title=Implementing%20a%20Backend%20Service%20in%20Rust%20%e2%80%94%20Part%201">
 <i class="fab fa-get-pocket" aria-hidden=true></i>
 </a>
 </li>
 <li>
-<a class=icon href="http://reddit.com/submit?url=https%3a%2f%2fdanilocianfrone.com%2fposts%2f2020-11-05-backend-service-in-rust-part-1%2f&title=Implementing%20a%20Backend%20Service%20in%20Rust%20%e2%80%94%20Part%201">
+<a class=icon href="http://reddit.com/submit?url=https%3a%2f%2far3s3ru.dev%2fposts%2f2020-11-05-backend-service-in-rust-part-1%2f&title=Implementing%20a%20Backend%20Service%20in%20Rust%20%e2%80%94%20Part%201">
 <i class="fab fa-reddit" aria-hidden=true></i>
 </a>
 </li>
 <li>
-<a class=icon href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fdanilocianfrone.com%2fposts%2f2020-11-05-backend-service-in-rust-part-1%2f&title=Implementing%20a%20Backend%20Service%20in%20Rust%20%e2%80%94%20Part%201">
+<a class=icon href="http://www.stumbleupon.com/submit?url=https%3a%2f%2far3s3ru.dev%2fposts%2f2020-11-05-backend-service-in-rust-part-1%2f&title=Implementing%20a%20Backend%20Service%20in%20Rust%20%e2%80%94%20Part%201">
 <i class="fab fa-stumbleupon" aria-hidden=true></i>
 </a>
 </li>
 <li>
-<a class=icon href="http://digg.com/submit?url=https%3a%2f%2fdanilocianfrone.com%2fposts%2f2020-11-05-backend-service-in-rust-part-1%2f&title=Implementing%20a%20Backend%20Service%20in%20Rust%20%e2%80%94%20Part%201">
+<a class=icon href="http://digg.com/submit?url=https%3a%2f%2far3s3ru.dev%2fposts%2f2020-11-05-backend-service-in-rust-part-1%2f&title=Implementing%20a%20Backend%20Service%20in%20Rust%20%e2%80%94%20Part%201">
 <i class="fab fa-digg" aria-hidden=true></i>
 </a>
 </li>
 <li>
-<a class=icon href="http://www.tumblr.com/share/link?url=https%3a%2f%2fdanilocianfrone.com%2fposts%2f2020-11-05-backend-service-in-rust-part-1%2f&name=Implementing%20a%20Backend%20Service%20in%20Rust%20%e2%80%94%20Part%201&description=Project%20description%2c%20Package%20Structure%20and%20Repository%20setup">
+<a class=icon href="http://www.tumblr.com/share/link?url=https%3a%2f%2far3s3ru.dev%2fposts%2f2020-11-05-backend-service-in-rust-part-1%2f&name=Implementing%20a%20Backend%20Service%20in%20Rust%20%e2%80%94%20Part%201&description=Project%20description%2c%20Package%20Structure%20and%20Repository%20setup">
 <i class="fab fa-tumblr" aria-hidden=true></i>
 </a>
 </li>
 <li>
-<a class=icon href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fdanilocianfrone.com%2fposts%2f2020-11-05-backend-service-in-rust-part-1%2f&t=Implementing%20a%20Backend%20Service%20in%20Rust%20%e2%80%94%20Part%201">
+<a class=icon href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2far3s3ru.dev%2fposts%2f2020-11-05-backend-service-in-rust-part-1%2f&t=Implementing%20a%20Backend%20Service%20in%20Rust%20%e2%80%94%20Part%201">
 <i class="fab fa-hacker-news" aria-hidden=true></i>
 </a>
 </li>
@@ -468,57 +468,57 @@ Twitter or LinkedIn, all the places!</p>
 <div id=share-footer style=display:none>
 <ul>
 <li>
-<a class=icon href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fdanilocianfrone.com%2fposts%2f2020-11-05-backend-service-in-rust-part-1%2f">
+<a class=icon href="http://www.facebook.com/sharer.php?u=https%3a%2f%2far3s3ru.dev%2fposts%2f2020-11-05-backend-service-in-rust-part-1%2f">
 <i class="fab fa-facebook fa-lg" aria-hidden=true></i>
 </a>
 </li>
 <li>
-<a class=icon href="https://twitter.com/share?url=https%3a%2f%2fdanilocianfrone.com%2fposts%2f2020-11-05-backend-service-in-rust-part-1%2f&text=Implementing%20a%20Backend%20Service%20in%20Rust%20%e2%80%94%20Part%201">
+<a class=icon href="https://twitter.com/share?url=https%3a%2f%2far3s3ru.dev%2fposts%2f2020-11-05-backend-service-in-rust-part-1%2f&text=Implementing%20a%20Backend%20Service%20in%20Rust%20%e2%80%94%20Part%201">
 <i class="fab fa-twitter fa-lg" aria-hidden=true></i>
 </a>
 </li>
 <li>
-<a class=icon href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fdanilocianfrone.com%2fposts%2f2020-11-05-backend-service-in-rust-part-1%2f&title=Implementing%20a%20Backend%20Service%20in%20Rust%20%e2%80%94%20Part%201">
+<a class=icon href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2far3s3ru.dev%2fposts%2f2020-11-05-backend-service-in-rust-part-1%2f&title=Implementing%20a%20Backend%20Service%20in%20Rust%20%e2%80%94%20Part%201">
 <i class="fab fa-linkedin fa-lg" aria-hidden=true></i>
 </a>
 </li>
 <li>
-<a class=icon href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fdanilocianfrone.com%2fposts%2f2020-11-05-backend-service-in-rust-part-1%2f&is_video=false&description=Implementing%20a%20Backend%20Service%20in%20Rust%20%e2%80%94%20Part%201">
+<a class=icon href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2far3s3ru.dev%2fposts%2f2020-11-05-backend-service-in-rust-part-1%2f&is_video=false&description=Implementing%20a%20Backend%20Service%20in%20Rust%20%e2%80%94%20Part%201">
 <i class="fab fa-pinterest fa-lg" aria-hidden=true></i>
 </a>
 </li>
 <li>
-<a class=icon href="mailto:?subject=Implementing%20a%20Backend%20Service%20in%20Rust%20%e2%80%94%20Part%201&body=Check out this article: https%3a%2f%2fdanilocianfrone.com%2fposts%2f2020-11-05-backend-service-in-rust-part-1%2f">
+<a class=icon href="mailto:?subject=Implementing%20a%20Backend%20Service%20in%20Rust%20%e2%80%94%20Part%201&body=Check out this article: https%3a%2f%2far3s3ru.dev%2fposts%2f2020-11-05-backend-service-in-rust-part-1%2f">
 <i class="fas fa-envelope fa-lg" aria-hidden=true></i>
 </a>
 </li>
 <li>
-<a class=icon href="https://getpocket.com/save?url=https%3a%2f%2fdanilocianfrone.com%2fposts%2f2020-11-05-backend-service-in-rust-part-1%2f&title=Implementing%20a%20Backend%20Service%20in%20Rust%20%e2%80%94%20Part%201">
+<a class=icon href="https://getpocket.com/save?url=https%3a%2f%2far3s3ru.dev%2fposts%2f2020-11-05-backend-service-in-rust-part-1%2f&title=Implementing%20a%20Backend%20Service%20in%20Rust%20%e2%80%94%20Part%201">
 <i class="fab fa-get-pocket fa-lg" aria-hidden=true></i>
 </a>
 </li>
 <li>
-<a class=icon href="http://reddit.com/submit?url=https%3a%2f%2fdanilocianfrone.com%2fposts%2f2020-11-05-backend-service-in-rust-part-1%2f&title=Implementing%20a%20Backend%20Service%20in%20Rust%20%e2%80%94%20Part%201">
+<a class=icon href="http://reddit.com/submit?url=https%3a%2f%2far3s3ru.dev%2fposts%2f2020-11-05-backend-service-in-rust-part-1%2f&title=Implementing%20a%20Backend%20Service%20in%20Rust%20%e2%80%94%20Part%201">
 <i class="fab fa-reddit fa-lg" aria-hidden=true></i>
 </a>
 </li>
 <li>
-<a class=icon href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fdanilocianfrone.com%2fposts%2f2020-11-05-backend-service-in-rust-part-1%2f&title=Implementing%20a%20Backend%20Service%20in%20Rust%20%e2%80%94%20Part%201">
+<a class=icon href="http://www.stumbleupon.com/submit?url=https%3a%2f%2far3s3ru.dev%2fposts%2f2020-11-05-backend-service-in-rust-part-1%2f&title=Implementing%20a%20Backend%20Service%20in%20Rust%20%e2%80%94%20Part%201">
 <i class="fab fa-stumbleupon fa-lg" aria-hidden=true></i>
 </a>
 </li>
 <li>
-<a class=icon href="http://digg.com/submit?url=https%3a%2f%2fdanilocianfrone.com%2fposts%2f2020-11-05-backend-service-in-rust-part-1%2f&title=Implementing%20a%20Backend%20Service%20in%20Rust%20%e2%80%94%20Part%201">
+<a class=icon href="http://digg.com/submit?url=https%3a%2f%2far3s3ru.dev%2fposts%2f2020-11-05-backend-service-in-rust-part-1%2f&title=Implementing%20a%20Backend%20Service%20in%20Rust%20%e2%80%94%20Part%201">
 <i class="fab fa-digg fa-lg" aria-hidden=true></i>
 </a>
 </li>
 <li>
-<a class=icon href="http://www.tumblr.com/share/link?url=https%3a%2f%2fdanilocianfrone.com%2fposts%2f2020-11-05-backend-service-in-rust-part-1%2f&name=Implementing%20a%20Backend%20Service%20in%20Rust%20%e2%80%94%20Part%201&description=Project%20description%2c%20Package%20Structure%20and%20Repository%20setup">
+<a class=icon href="http://www.tumblr.com/share/link?url=https%3a%2f%2far3s3ru.dev%2fposts%2f2020-11-05-backend-service-in-rust-part-1%2f&name=Implementing%20a%20Backend%20Service%20in%20Rust%20%e2%80%94%20Part%201&description=Project%20description%2c%20Package%20Structure%20and%20Repository%20setup">
 <i class="fab fa-tumblr fa-lg" aria-hidden=true></i>
 </a>
 </li>
 <li>
-<a class=icon href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fdanilocianfrone.com%2fposts%2f2020-11-05-backend-service-in-rust-part-1%2f&t=Implementing%20a%20Backend%20Service%20in%20Rust%20%e2%80%94%20Part%201">
+<a class=icon href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2far3s3ru.dev%2fposts%2f2020-11-05-backend-service-in-rust-part-1%2f&t=Implementing%20a%20Backend%20Service%20in%20Rust%20%e2%80%94%20Part%201">
 <i class="fab fa-hacker-news fa-lg" aria-hidden=true></i>
 </a>
 </li>
