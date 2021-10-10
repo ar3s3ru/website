@@ -1,8 +1,8 @@
-name: Generate new version (master)
+name: Publish website
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   deploy:
