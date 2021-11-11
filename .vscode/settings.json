@@ -1,0 +1,8 @@
+{
+    "files.trimTrailingWhitespace": true,
+    "[markdown]": {
+        "editor.wordWrap": "on",
+        "editor.quickSuggestions": false,
+        "files.trimTrailingWhitespace": false
+    }
+}

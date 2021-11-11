@@ -8,8 +8,8 @@ _Ciao_, my name is Dani!
 I'm a **Software Engineer** from Italy, currently living in _Berlin_
 and working for [HelloFresh SE](https://www.hellofresh.com).
 
-I mostly work with PHP nowadays, but me and Go "go" way back :lol:
-\[EDIT: actually, that's not true anymore; I'm mostly using Go, Kotlin and some Rust these days, but I'll keep this one up 'cause I like the joke hehe\]
+I mostly work with PHP nowadays, but me and Go "go" way back :lol:  
+_\[EDIT: actually, that's not true anymore; I'm mostly using Go, Kotlin and some Rust these days, but I'll keep this one up 'cause I like the joke hehe\]_
 
 My current interests are:
 
