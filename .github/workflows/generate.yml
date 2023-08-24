@@ -1,4 +1,4 @@
-name: Deploy website
+name: Publish
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -11,6 +11,7 @@ on:
 
 jobs:
   deploy:
+    name: Deploy
     runs-on: ubuntu-latest
     steps:
       - name: Git checkout
@@ -26,10 +27,10 @@ jobs:
       - name: Build
         run: hugo --minify
 
-      - name: Deploy
+      - name: Deploy to Github Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          personal_token: ${{ secrets.TOKEN }}
+          personal_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
           publish_branch: gh-pages
           cname: ar3s3ru.dev
