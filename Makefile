@@ -23,6 +23,11 @@ deploy: build
 		git commit -m "Rebuild site @ $(BUILD_ID)"; \
 		git push origin gh-pages
 
+flake.update:
+	@nix flake update --extra-experimental-features nix-command --extra-experimental-features flakes
+
+devenv:
+	@nix develop --extra-experimental-features nix-command --extra-experimental-features flakes
 
 define colorprintf
     @tput setaf $1

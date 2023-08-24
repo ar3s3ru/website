@@ -1,3 +1,6 @@
 # Ignore Hugo generated files
 # -- must use deploy.sh to deploy changes
 public/
+
+# Anything direnv related (flakes cached) must be ignored.
+.direnv/
