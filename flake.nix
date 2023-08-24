@@ -13,6 +13,11 @@
         devShells.default = with pkgs; mkShell {
           name = "shell";
           packages = [ nix git hugo ];
+
+          shellHook = ''
+            # Loads the theme submodule.
+            git submodule update --init --recursive
+          '';
         };
       });
 }

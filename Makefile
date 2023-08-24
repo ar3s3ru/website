@@ -1,38 +1,38 @@
-BUILD_ID=$(shell date --iso-8601='seconds')
+MAKEFLAGS    += -s --always-make -C
+SHELL        := bash
+.SHELLFLAGS  := -Eeuo pipefail -c
 
-.PHONY: download-public deploy build server
+ifndef DEBUG
+.SILENT:
+endif
+
+BUILD_ID=$(shell date --iso-8601='seconds')
 
 download-public:
 	$(call redprintf,">>> Downloading gh-pages branch in public folder")
-	@git clone --branch=gh-pages git@github.com:ar3s3ru/website public
+	git clone --branch=gh-pages git@github.com:ar3s3ru/website public
 
 build:
 	$(call blueprintf,">>> Building website")
-	@hugo
+	hugo
 
 server:
 	$(call blueprintf,">>> Starting Hugo server")
-	@hugo server
+	hugo server
 
 deploy: build
 	$(call redprintf,">>> Deploying updates to Github")
 
 	# Add changes to git
-	@cd public ; \
+	cd public ; \
 		git add . ; \
 		git commit -m "Rebuild site @ $(BUILD_ID)"; \
 		git push origin gh-pages
 
-flake.update:
-	@nix flake update --extra-experimental-features nix-command --extra-experimental-features flakes
-
-devenv:
-	@nix develop --extra-experimental-features nix-command --extra-experimental-features flakes
-
 define colorprintf
-    @tput setaf $1
-    @echo $2
-    @tput sgr0
+    tput setaf $1
+    echo $2
+    tput sgr0
 endef
 
 define redprintf
